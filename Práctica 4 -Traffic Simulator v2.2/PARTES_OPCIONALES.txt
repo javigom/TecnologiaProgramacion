@@ -1,0 +1,42 @@
+ALUMNO: JAVIER GÓMEZ MORALEDA
+CLASE: 2ºD
+
+IMPORTANTE: Usar carpeta de resources que se encuentra en el zip para ver los nuevos iconos.
+
+CAMBIOS OPCIONALES:
+	
+	*Añadido botón "reset" que limpia todo y carga la lista de eventos inicial.
+	
+	*Añadido botón "undo" ó deshacer, que permite volver hacia atrás el número de ticks que quieras.
+
+	*Uso de genéricos y herencia para el modelo de las tablas.
+	
+	*Uso de genéricos para las ventanas de diálogo (clase GenericDialogModel, he dejado ChangeCO2ClassDialog y ChangeWeatherDialog aunque en la útlima versión no se utilicen).
+
+	*Añadido un botón que permite eliminar eventos (Bloqueado en time = 0 para evitar excepciones si se elimina una carretera/cruce/vehículo). Si el usuario ha eliminado un evento,
+	NO se podrá restaurar pulsando el botón de undo ya que no ha transcurrido el tiempo.
+
+	*Añadidos los botones de cargar/guardar la simulación en un fichero. El botón de guardar, guarda los eventos como un fichero de carga normal con la única diferencia que se añade un parámetro "time" justo con los eventos.
+	El botón de cargar un save, usa el mismo método que cargar un fichero normal y hace uso de un booleano para saber si busca el parámetro time para avanzar n ticks la simulación. Igual que el fichero de carga normal,
+	llama a loadEvents.
+
+
+CAMBIOS MENORES:
+
+	*El simulador se puede cerrar usando el aspa de la misma manera que pulsando el botón de apagar.
+
+	*La ventana de diálogo de cambiar la clase de contaminación de un vehículo no se abre si no hay ningún vehículo. En el caso de intentarlo aparece una ventana de 
+	diálogo informando del error.
+
+	*La ventana de diálogo de cambiar el tiempo de una carretera no se abre si no hay ninguna carretera. En el caso de intentarlo aparece una ventana de 
+	diálogo informando del error.
+
+	*Todos los JSpinner (ventana principal, diálogo cambio contaminación y diálogo cambio tiempo) tienen un valor mínimo de 1 (La idea inicial era que si el 
+	usuario proporciona un valor menor o igual que 0, muestro una ventana con un mensaje de error, pero me pareció más limpia esta forma).
+
+	*Añadido atributo booleano "correctFile" a la clase controller que se encargará de hacerle saber al ControlPanel si existe un fichero de entrada válido. Si esto no es
+	así, la barra de tareas (salvo el botón de abrir fichero, cargar y cerrar) estará bloqueada hasta que no se abra un fichero válido.
+
+	*Si se selecciona un fichero de entrada (usando el botón) no válido, se bloquea toda la barra de tareas (salvo abrir fichero, cargar un save o salir) hasta que no se seleccione un fichero correcto.
+	
+	*Modificación de algunos iconos.
